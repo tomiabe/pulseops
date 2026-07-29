@@ -57,11 +57,11 @@ export function Overview() {
                       <p className="text-sm font-medium text-text truncate">{m.name}</p>
                       <p className="text-xs text-text-muted">{m.location}</p>
                     </div>
-                    <div className="flex items-center gap-4 text-xs text-text-secondary">
+                    <div className="flex items-center gap-3 sm:gap-4 text-xs text-text-secondary shrink-0 whitespace-nowrap">
                       <span>{m.temperature.toFixed(1)}°C</span>
                       <span>{m.efficiency.toFixed(1)}%</span>
                     </div>
-                    <Badge variant={m.status === 'healthy' ? 'healthy' : m.status === 'warning' ? 'warning' : m.status === 'critical' ? 'critical' : 'offline'}>
+                    <Badge variant={m.status === 'healthy' ? 'healthy' : m.status === 'warning' ? 'warning' : m.status === 'critical' ? 'critical' : 'offline'} className="shrink-0">
                       {m.status}
                     </Badge>
                     <ChevronRight size={14} className="text-text-muted opacity-0 group-hover:opacity-100 transition-opacity" />
