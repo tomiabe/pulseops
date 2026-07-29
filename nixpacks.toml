@@ -1,8 +1,8 @@
-[phases.setup]
-nixPkgs = ["nodejs_20"]
-
 [phases.build]
-cmds = ["cd frontend && npm install && npm run build"]
+cmds = [
+  "curl -fsSL https://nodejs.org/dist/v22.14.0/node-v22.14.0-linux-x64.tar.gz | tar xz -C /usr/local --strip-components=1",
+  "cd frontend && npm install && npm run build"
+]
 
 [start]
 cmd = "python -m uvicorn backend.main:app --host 0.0.0.0 --port $PORT"
