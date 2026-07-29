@@ -19,7 +19,7 @@ export function Overview() {
   const { machines, alerts, kpis, insights } = useDashboard();
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-lg font-semibold text-text">Overview</h1>
@@ -29,13 +29,13 @@ export function Overview() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         {kpis.map((kpi) => (
           <KPICard key={kpi.label} {...kpi} />
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
         <Card className="lg:col-span-2">
           <CardHeader>
             <CardTitle>Assets</CardTitle>
@@ -48,7 +48,7 @@ export function Overview() {
                   <Link
                     key={m.id}
                     to={`/machines/${m.id}`}
-                    className="flex items-center gap-4 px-5 py-3.5 hover:bg-surface/50 transition-colors group"
+                    className="flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-3 sm:py-3.5 hover:bg-surface/50 transition-colors group"
                   >
                     <div className="h-8 w-8 rounded-lg bg-accent/10 flex items-center justify-center">
                       <Icon size={14} className="text-accent" />
@@ -72,7 +72,7 @@ export function Overview() {
           </CardContent>
         </Card>
 
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           <Card>
             <CardHeader>
               <CardTitle>Active Alerts</CardTitle>

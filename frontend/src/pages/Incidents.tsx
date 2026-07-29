@@ -32,7 +32,7 @@ export function Incidents() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       <div>
         <h1 className="text-lg font-semibold text-text">Incidents</h1>
         <p className="text-sm text-text-muted mt-0.5">Event timeline</p>

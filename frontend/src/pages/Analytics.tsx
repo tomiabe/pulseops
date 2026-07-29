@@ -72,7 +72,7 @@ export function Analytics() {
   const { machines, telemetry } = useDashboard();
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       <div>
         <h1 className="text-lg font-semibold text-text">Analytics</h1>
         <p className="text-sm text-text-muted mt-0.5">Statistical process control</p>
@@ -89,7 +89,7 @@ export function Analytics() {
               <Badge variant="info">SPC Active</Badge>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
                 {(['temperature', 'pressure', 'vibration', 'efficiency'] as const).map((key) => {
                   const points = data[key];
                   if (!points || points.length < 5) return null;

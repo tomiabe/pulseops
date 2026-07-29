@@ -21,7 +21,7 @@ export function CardHeader({
   children,
 }: { className?: string; children?: ReactNode }) {
   return (
-    <div className={cn('flex items-center justify-between px-5 py-4 border-b border-border', className)}>
+    <div className={cn('flex items-center justify-between px-4 sm:px-5 py-3 sm:py-4 border-b border-border', className)}>
       {children}
     </div>
   );
@@ -31,7 +31,7 @@ export function CardContent({
   className,
   children,
 }: { className?: string; children?: ReactNode }) {
-  return <div className={cn('p-5', className)}>{children}</div>;
+  return <div className={cn('p-4 sm:p-5', className)}>{children}</div>;
 }
 
 export function CardTitle({

@@ -41,7 +41,7 @@ export function LiveMonitoring() {
   const { machines, telemetry } = useDashboard();
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       <div>
         <h1 className="text-lg font-semibold text-text">Live Monitoring</h1>
         <p className="text-sm text-text-muted mt-0.5">Real-time sensor telemetry</p>
@@ -66,7 +66,7 @@ export function LiveMonitoring() {
             </CardHeader>
             <CardContent>
               {data ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                   {(Object.keys(metricConfig) as Array<keyof typeof metricConfig>).map((key) => {
                     const cfg = metricConfig[key];
                     const points = data[key] as { t: number; v: number }[] | undefined;

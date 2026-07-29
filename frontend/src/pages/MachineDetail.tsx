@@ -57,15 +57,15 @@ export function MachineDetail() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       <button onClick={() => navigate(-1)} className="flex items-center gap-1.5 text-sm text-text-muted hover:text-text transition-colors">
         <ArrowLeft size={14} />
         Back
       </button>
 
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div className="flex items-center gap-3">
-          <div className="h-10 w-10 rounded-xl bg-accent/10 flex items-center justify-center">
+          <div className="h-10 w-10 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
             <Cpu size={18} className="text-accent" />
           </div>
           <div>
@@ -78,21 +78,21 @@ export function MachineDetail() {
             <p className="text-sm text-text-muted">{machine.location}</p>
           </div>
         </div>
-        <div className="flex items-center gap-6 text-sm text-text-secondary">
-          <div className="text-right">
+        <div className="flex items-center gap-6 text-sm text-text-secondary pl-13 sm:pl-0">
+          <div>
             <p className="text-xs text-text-muted">Uptime</p>
             <p className="font-medium text-text">
               {Math.floor(machine.uptime / 3600)}h {Math.floor((machine.uptime % 3600) / 60)}m
             </p>
           </div>
-          <div className="text-right">
+          <div>
             <p className="text-xs text-text-muted">Utilization</p>
             <p className="font-medium text-text">{machine.utilization.toFixed(0)}%</p>
           </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         {(Object.keys(metricConfig) as Array<keyof typeof metricConfig>).map((key) => {
           const cfg = metricConfig[key];
           const points = data?.[key] ?? [];
